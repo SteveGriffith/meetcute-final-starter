@@ -69,16 +69,16 @@ var app = {
         });
         if(id=="contacts"){
             console.log("get contacts list ready");
-            
+            //call the fetch contacts page
         }
         if(id=="scan"){
             console.log("get profile ready and qr code");
-            
+            //call the fetch profile function
         }
         if(id=="madlib"){
             //load the madlib story for the contact
             var contact = ct.getAttribute("data-id");
-            
+            // call the load story function
         }
     },
     setupDB: function(){
@@ -119,6 +119,8 @@ var app = {
         //update app.profile
         
         //update home page info based on app.profile
+        
+        //generate the new QRCode based on the profile
     },
     createQR: function(){
         //build the string to display as QR Code from app.profile
@@ -161,9 +163,9 @@ var app = {
         var pages = document.querySelectorAll("[data-role=page]");
         var tabs = document.querySelectorAll("#menu li");
         [].forEach.call(pages, function(p, index){
-            p.classList.remove("active");
+            p.classList.remove("active-page");
             if(p.id == hash){
-                p.classList.add("active");
+                p.classList.add("active-page");
             }
         });
         [].forEach.call(tabs, function(item, index){
